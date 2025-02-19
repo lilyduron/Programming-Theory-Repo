@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 4057618807558855446}
   - component: {fileID: 8427651409948234493}
   - component: {fileID: 2957954151701801401}
+  - component: {fileID: 6459205641378361767}
   m_Layer: 0
   m_Name: Horse
   m_TagString: Player
@@ -1261,8 +1262,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &6459205641378361767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662585433621887539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f83cf340ea1b544a29e97319d2a64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 0
 --- !u!1 &4685531894377287198
 GameObject:
   m_ObjectHideFlags: 0

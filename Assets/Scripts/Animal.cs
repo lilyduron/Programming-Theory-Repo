@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    Rigidbody playerRb;
-    public float jumpForce= 10;
-    public bool isOnGround;
+    protected Rigidbody animalRb;
+    [SerializeField] protected float jumpForce;
+    protected bool isOnGround;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       playerRb = GetComponent<Rigidbody>();
+       animalRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class Animal : MonoBehaviour
        Jump();     
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
@@ -27,11 +27,11 @@ public class Animal : MonoBehaviour
         }
     }
 
-    void Jump()
+    public virtual void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isOnGround)
          {
-           playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+           animalRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
            isOnGround = false;
          }
     }

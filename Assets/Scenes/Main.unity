@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5210402308129547163, guid: 8d40fa32fa8594944acf41084df2683d, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -435,11 +439,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 993590716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8e1f81d26ff2a4a9ba9414a254fad4, type: 3}
+  m_Script: {fileID: 11500000, guid: cda6ead878560ae4fb3a3a579fa82a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7
-  isOnGround: 0
+  jumpForce: 10
 --- !u!1 &1461571973
 GameObject:
   m_ObjectHideFlags: 0
