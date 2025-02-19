@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RepeatBackground : MonoBehaviour
@@ -11,14 +12,19 @@ public class RepeatBackground : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        // we add a box collider to the background, we get the size and divide by 2 to get the exact half point of the background
         repeatWidth = GetComponent<BoxCollider>().size.x / 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < startPos.x - repeatWidth)
+        //ABSTRACTION
+        Repeat();
+    }
+
+    void Repeat()
+    {
+       if(transform.position.x < startPos.x - repeatWidth)
         {
            transform.position = startPos;
         }
