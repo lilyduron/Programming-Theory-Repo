@@ -202,7 +202,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 680327283}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1859561148}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: SelectMoose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &680327283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: 1
+  moosePrefab: {fileID: 2059830758098274827, guid: 8d40fa32fa8594944acf41084df2683d, type: 3}
+  foxPrefab: {fileID: 0}
+  horsePrefab: {fileID: 0}
 --- !u!1 &736435885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1833568587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1859561148}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: SelectFox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1833568587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: 2
+  moosePrefab: {fileID: 0}
+  foxPrefab: {fileID: 8773549829951914961, guid: 03a5f256f2a307149b57f11181c48bf5, type: 3}
+  horsePrefab: {fileID: 0}
 --- !u!1 &1851351610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: 0
+  moosePrefab: {fileID: 2059830758098274827, guid: 8d40fa32fa8594944acf41084df2683d, type: 3}
+  foxPrefab: {fileID: 8773549829951914961, guid: 03a5f256f2a307149b57f11181c48bf5, type: 3}
+  horsePrefab: {fileID: 4662585433621887539, guid: 78f2d59e26e78b340a78a3fb3a55254e, type: 3}
 --- !u!1 &1928879462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2146905224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1859561148}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: SelectHorse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2146905224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,6 +1737,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: 3
+  moosePrefab: {fileID: 0}
+  foxPrefab: {fileID: 0}
+  horsePrefab: {fileID: 4662585433621887539, guid: 78f2d59e26e78b340a78a3fb3a55254e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
