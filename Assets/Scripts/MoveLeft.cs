@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    private float speed=30;
+    [SerializeField] private float speed = 25;
 
-    private float leftBound= -15;
+    [SerializeField] private float leftBound= -40;
+
+    GameManager gameManager;
+
+
+    void Start()
+    {  
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        
+    }
 
 
     // Update is called once per frame
@@ -16,7 +25,18 @@ public class MoveLeft : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if(gameManager.isGameActive == true)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
+
+        if(transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+
+        
+        
     }
     
 }

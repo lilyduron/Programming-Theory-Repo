@@ -5,11 +5,16 @@ public class Animal : MonoBehaviour
     protected Rigidbody animalRb;
     [SerializeField] protected float jumpForce;
     protected bool isOnGround;
+    GameManager gameManager;
+    private Animator animator;
+    private float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        animalRb = GetComponent<Rigidbody>();
+       gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+       animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,11 +24,17 @@ public class Animal : MonoBehaviour
        Jump();     
     }
 
-    protected void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
           isOnGround=true;
+        }
+        else if(collision.gameObject.CompareTag("Obstacle"))
+        {
+          //Debug.Log("Hit a rock");
+          gameManager.GameOver();
+          StopAnimal();
         }
     }
 
@@ -35,6 +46,14 @@ public class Animal : MonoBehaviour
            isOnGround = false;
          }
     }
+
+    public void StopAnimal()
+    {
+      speed= 0;
+      animator.SetFloat("Speed_f", speed);
+    }
+
+   
 }
 
     

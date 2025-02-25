@@ -17,7 +17,7 @@ public class Horse : Animal  //INHERITANCE
     //POLYMORPHISM
     public override void Jump()
     {
-        jumpForce = 8;
+        jumpForce = 9;
         base.Jump();
     }
 }

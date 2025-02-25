@@ -17,7 +17,7 @@ public class Fox : Animal //INHERITANCE
     //POLYMORPHISM
     public override void Jump()
     {
-        jumpForce = 6;
+        jumpForce = 7;
         base.Jump();
     }
 }

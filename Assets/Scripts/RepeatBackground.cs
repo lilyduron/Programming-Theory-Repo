@@ -11,8 +11,8 @@ public class RepeatBackground : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos = transform.position;
-        repeatWidth = GetComponent<BoxCollider>().size.x / 2;
+         //ABSTRACTION
+        CalculateRepeatWidth();
     }
 
     // Update is called once per frame
@@ -28,5 +28,12 @@ public class RepeatBackground : MonoBehaviour
         {
            transform.position = startPos;
         }
+    }
+
+    //calculate the middle point to repeat the background
+    void CalculateRepeatWidth()
+    {
+        startPos = transform.position;
+        repeatWidth = GetComponent<BoxCollider>().size.x / 2;
     }
 }

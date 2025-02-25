@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Moose : Animal  //INHERITANCE
 { 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +18,7 @@ public class Moose : Animal  //INHERITANCE
     //POLYMORPHISM
     public override void Jump()
     {
-        jumpForce = 7;
+        jumpForce = 8;
         base.Jump();
     }
 }
