@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Horse : Animal  //INHERITANCE
+public class Stag : Animal  //INHERITANCE
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

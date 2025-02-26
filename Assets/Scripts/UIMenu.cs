@@ -9,7 +9,7 @@ public class UIMenu : MonoBehaviour
     public int animal;
     public GameObject moosePrefab;
     public GameObject foxPrefab;
-    public GameObject horsePrefab;
+    public GameObject stagPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,9 +50,9 @@ public class UIMenu : MonoBehaviour
         StartGame();
     }
 
-    public void SelectHorse()
+    public void SelectStag()
     {
-        PlayerPrefs.SetString("SelectedAnimal", "Horse");
+        PlayerPrefs.SetString("SelectedAnimal", "Stag");
         StartGame();
     }
 }

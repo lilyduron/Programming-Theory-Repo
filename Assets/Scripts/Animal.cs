@@ -24,15 +24,16 @@ public class Animal : MonoBehaviour
        Jump();     
     }
 
-    protected virtual void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision with: " + collision.gameObject.name);
         if(collision.gameObject.CompareTag("Ground"))
         {
           isOnGround=true;
         }
         else if(collision.gameObject.CompareTag("Obstacle"))
         {
-          //Debug.Log("Hit a rock");
+          Debug.Log("Hit a rock");
           gameManager.GameOver();
           StopAnimal();
         }

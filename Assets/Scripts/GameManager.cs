@@ -7,22 +7,27 @@ public class GameManager : MonoBehaviour
     private float spawnRate = 2f;
     Vector3 spawnPos;
     float spawnPosX = 25;
-    float spawnPosY = 1;
-    float spawnPosZ = -1.5f;
+    float spawnPosY = 1.1f;
+    float spawnPosZ = -2f;
     float minSpawnInterval = 1.5f;  // Minimum spawn interval
     float maxSpawnInterval = 4f;  // Maximum spawn interval
     float randomInterval;
 
     public bool isGameActive;
+
+    public GameObject moosePrefab;
+    public GameObject foxPrefab;
+    public GameObject stagPrefab;
     
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+       SelectedAnimal();
        isGameActive=true; 
        StartCoroutine(SpawnObjects());
+
        
     }
 
@@ -62,9 +67,30 @@ public class GameManager : MonoBehaviour
     {
        Debug.Log("Game Over!");
        isGameActive = false;
-     
-       
+    }
 
+    void SelectedAnimal()
+    {
+         string selectedAnimal = PlayerPrefs.GetString("SelectedAnimal");
+         GameObject animalPrefab = null;
+
+         switch (selectedAnimal)
+         {
+            case "Moose":
+            animalPrefab = moosePrefab;
+            break;
+            case "Fox":
+            animalPrefab = foxPrefab;
+            break;
+            case "Stag":
+            animalPrefab = stagPrefab;
+            break;
+         }
+
+         if(animalPrefab !=null)
+         {
+            Instantiate(animalPrefab, new Vector3(-21f,0,-2f), animalPrefab.transform.rotation);
+         }
     }
 }
 
