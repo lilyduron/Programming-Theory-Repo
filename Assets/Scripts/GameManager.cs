@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     Vector3 spawnPos;
     float spawnPosX = 25;
     float spawnPosY = 1.1f;
-    float spawnPosZ = -2f;
+    float spawnPosZ = -2;
     float minSpawnInterval = 1.5f;  // Minimum spawn interval
     float maxSpawnInterval = 4f;  // Maximum spawn interval
     float randomInterval;
@@ -18,29 +19,20 @@ public class GameManager : MonoBehaviour
     public GameObject moosePrefab;
     public GameObject foxPrefab;
     public GameObject stagPrefab;
+    public GameObject GameOverText;
     
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
-       SelectedAnimal();
+       SelectedAnimal();   //ABSTRACTION
        isGameActive=true; 
-       StartCoroutine(SpawnObjects());
-
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
+       StartCoroutine(SpawnObjects());   
     }
 
     // Spawn obstacles
     IEnumerator SpawnObjects ()
     {
-        
          // If game is still active, spawn new object
         while (isGameActive)
         {
@@ -51,9 +43,7 @@ public class GameManager : MonoBehaviour
           if(isGameActive)
            {
               Instantiate(rockPrefab, spawnPos, rockPrefab.transform.rotation);  
-           }
-           
-            
+           }         
         }    
     }
 
@@ -67,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
        Debug.Log("Game Over!");
        isGameActive = false;
+       GameOverText.SetActive(true);
     }
 
     void SelectedAnimal()
@@ -89,8 +80,24 @@ public class GameManager : MonoBehaviour
 
          if(animalPrefab !=null)
          {
-            Instantiate(animalPrefab, new Vector3(-21f,0,-2f), animalPrefab.transform.rotation);
-         }
+            // Instantiate the animal prefab
+            GameObject animalInstance = Instantiate(animalPrefab, new Vector3(0, 0, 0), animalPrefab.transform.rotation);
+
+            // Access the Animal component of the instantiated animal prefab
+            Animal animal = animalInstance.GetComponent<Animal>();
+
+        if (animal != null)
+            {
+               // Set the position using the values from the Animal class
+               animalInstance.transform.position = new Vector3(animal.PosX, animal.PosY, animal.PosZ);
+            }
+            
+         }  
+    }
+
+    public void Restart()
+    {
+       SceneManager.LoadScene(0);
     }
 }
 
