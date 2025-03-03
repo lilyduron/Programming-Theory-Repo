@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject foxPrefab;
     public GameObject stagPrefab;
     public GameObject GameOverText;
+    public GameObject AnimalInfoText;
+    public TextMeshProUGUI animalText;
+    public TextMeshProUGUI animalJump;
+
     
 
     
@@ -27,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
        SelectedAnimal();   //ABSTRACTION
        isGameActive=true; 
-       StartCoroutine(SpawnObjects());   
+       StartCoroutine(SpawnObjects());  
     }
 
     // Spawn obstacles
@@ -58,6 +63,7 @@ public class GameManager : MonoBehaviour
        Debug.Log("Game Over!");
        isGameActive = false;
        GameOverText.SetActive(true);
+       AnimalInfoText.SetActive(false);
     }
 
     void SelectedAnimal()
@@ -69,12 +75,18 @@ public class GameManager : MonoBehaviour
          {
             case "Moose":
             animalPrefab = moosePrefab;
+            animalText.text = "Animal: Moose";
+            animalJump.text = "Jump Force: " + animalPrefab.GetComponentInChildren<Moose>().GetJumpForce();
             break;
             case "Fox":
             animalPrefab = foxPrefab;
+            animalText.text = "Animal: Fox";
+            animalJump.text = "Jump Force: " + animalPrefab.GetComponentInChildren<Fox>().GetJumpForce();
             break;
             case "Stag":
             animalPrefab = stagPrefab;
+            animalText.text = "Animal: Stag";
+            animalJump.text = "Jump Force: " + animalPrefab.GetComponentInChildren<Stag>().GetJumpForce();
             break;
          }
 
@@ -82,7 +94,7 @@ public class GameManager : MonoBehaviour
          {
             // Instantiate the animal prefab
             GameObject animalInstance = Instantiate(animalPrefab, new Vector3(0, 0, 0), animalPrefab.transform.rotation);
-
+            
             // Access the Animal component of the instantiated animal prefab
             Animal animal = animalInstance.GetComponent<Animal>();
 
@@ -99,6 +111,7 @@ public class GameManager : MonoBehaviour
     {
        SceneManager.LoadScene(0);
     }
+
 }
 
 

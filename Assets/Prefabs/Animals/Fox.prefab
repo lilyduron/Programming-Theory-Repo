@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 6490811180762812751}
   - component: {fileID: 7838319394485319334}
   - component: {fileID: 972558965847759859}
-  - component: {fileID: -4695854590282685534}
+  - component: {fileID: -2158453535954209896}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Player
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 0
---- !u!114 &-4695854590282685534
+--- !u!114 &-2158453535954209896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

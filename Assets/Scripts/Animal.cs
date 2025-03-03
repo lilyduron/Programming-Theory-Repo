@@ -3,7 +3,7 @@ using UnityEngine;
 public class Animal : MonoBehaviour
 {
     protected Rigidbody animalRb;
-    [SerializeField] protected float jumpForce;
+    protected float jumpForce;
     protected bool isOnGround;
     GameManager gameManager;
     private Animator animator;
@@ -75,6 +75,11 @@ public class Animal : MonoBehaviour
     {
       speed = 0;
       animator.SetFloat("Speed_f", speed);
+    }
+
+    public virtual float GetJumpForce()
+    {
+        return jumpForce;
     }
    
 }
